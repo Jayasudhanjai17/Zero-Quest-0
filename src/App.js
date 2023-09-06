@@ -27,11 +27,36 @@ function App() {
   //NOTE -----------------------------Toggele State For the Current Player UI----------------------------
   const call = function () {
     // setAllow1((prev) => pile<3? prev: !prev);
-    setAllow1((prev) => (pile > btn ? !prev : prev));
+    // setAllow1((prev) => (pile > btn ? !prev : prev));
 
-    console.log("switch happens", allow1);
+    console.log(
+      "switch happens",
+      "allow",
+      allow1,
+      "pile value",
+      pile,
+      "cureent player",
+      curPlayer
+    );
+    if (pile >= btn && pile != 0) {
+      // setCurPlayer(curPlayer === "Player1" ? "Player2" : "Player1");
+      if (curPlayer === "Player1") {
+        setCurPlayer("Player2");
+      } else if (curPlayer === "Player2") {
+        setCurPlayer("Player1");
+      }
+    }
+    // if (pile == 2 && btn == 1) {
+    //   setCurPlayer(curPlayer === "Player1" ? "Player2" : "Player1");
+    //   setAllow1((prev) => (pile > btn ? !prev : prev));
+    // }
+    // setAllow1((prev) => (pile > btn ? !prev : prev))
     if (pile > btn) {
-      setCurPlayer(curPlayer === "Player1" ? "Player2" : "Player1");
+      if (allow1) {
+        setAllow1(!allow1);
+      } else if (!allow1) {
+        setAllow1(!allow1);
+      }
     }
     console.log(curPlayer);
     // console.log("allow1 insise call",allow1);

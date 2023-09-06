@@ -1,5 +1,5 @@
 import React from "react";
-let Pile = 20;
+
 const Player2 = function () {
   return (
     <div>

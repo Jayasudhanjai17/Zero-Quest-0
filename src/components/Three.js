@@ -4,7 +4,7 @@ const Three = function (props) {
   let cur = props.cur;
   let nowin = false;
   const redThree = function () {
-    props.setBtn(3);
+    // props.setBtn(3);
     // if (num === 0) {
     //   // const winner= cur==='Player1'?'Player2':'Player1';
     //   nowin = true;
@@ -17,11 +17,13 @@ const Three = function (props) {
     } else if (props.number > 0) {
       props.setPile(props.number - 3);
       // props.switch(cur === "Player1" ? "Player2" : "Player1");
+      //onClick={() => props.call()}
     }
+    props.setBtn(3);
   };
   return (
-    <div className="d-inline" onClick={() => props.call()}>
-      <button onClick={redThree}>3️⃣</button>
+    <div className="d-inline" onClick={redThree}>
+      <button onClick={() => props.call()}>3️⃣</button>
     </div>
   );
 };

@@ -47,12 +47,12 @@ import React from "react";
 
 const One = function (props) {
   // console.log(props);
-  let num = props.number;
-  let cur = props.cur;
-  let nowin = false;
+  let num = props.number;//pile
+ 
+ 
 
   const redOne = function () {
-    props.setBtn(1);
+    // props.setBtn(1);
     // console.log("before if", num);
 
     // if (nowin === false) {
@@ -61,7 +61,7 @@ const One = function (props) {
         // console.log(num, "before red");
         props.setPile(num - 1);
         //------------------------switchPlayer------------------------------
-        console.log("after red", nowin, num);
+     
         // props.switch(cur === "Player1" ? "Player2" : "Player1");
         // console.log("nowin", nowin);
       // } else {
@@ -69,13 +69,13 @@ const One = function (props) {
       //   // console.log("nowin", nowin);
       // }
     }
+    props.setBtn(1);
   };
 
-  // ...
-
+  // ...onClick={redOne}
   return (
-    <div className="d-inline" onClick={() => props.call()}>
-      <button onClick={redOne}>1️⃣</button>
+    <div className="d-inline" onClick={redOne}>
+      <button onClick={() => props.call()}>1️⃣</button>
     </div>
   );
 };

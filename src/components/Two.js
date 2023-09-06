@@ -4,7 +4,7 @@ const Two = function (props) {
   let cur = props.cur;
   let nowin = false;
   const redTwo = function () {
-    props.setBtn(2);
+    // props.setBtn(2);
     // if (num === 0) {
     //   alert(` ${cur} Wins the Game `);
     //   // const winner= cur==='Player1'?'Player2':'Player1';
@@ -21,6 +21,7 @@ const Two = function (props) {
       console.log("prop num", props.number);
       
     }
+    props.setBtn(2);
   };
   // if(num===0){
   //   // const winner= cur==='Player1'?'Player2':'Player1';
@@ -29,10 +30,11 @@ const Two = function (props) {
   //     // props.win();
   //   // alert(` ${cur} Wins the Game `)
   // }
+  //onClick={() => props.call()}
 
   return (
-    <div className="d-inline" onClick={() => props.call()}>
-      <button onClick={redTwo}>2️⃣</button>
+    <div className="d-inline" onClick={redTwo}>
+      <button onClick={() => props.call()}>2️⃣</button>
     </div>
   );
 };
