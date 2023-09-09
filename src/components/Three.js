@@ -10,7 +10,7 @@ const Three = function (props) {
      
       props.setBtn(3);
       props.setPile(props.number - 3);
-      props.swap(true);
+      props.swap (true);
     }
     props.setBtn(3);
   };
