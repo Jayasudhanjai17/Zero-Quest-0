@@ -1,40 +1,24 @@
 import React from "react";
 const Two = function (props) {
-  let num = props.number;
-  let cur = props.cur;
-  let nowin = false;
   const redTwo = function () {
-    // props.setBtn(2);
-    // if (num === 0) {
-    //   alert(` ${cur} Wins the Game `);
-    //   // const winner= cur==='Player1'?'Player2':'Player1';
-    //   nowin = true;
-    //   props.setChamp(true);
-    //   // props.win();
-    //   // alert(` ${cur} Wins the Game `)
-    // }
-
+    props.setBtn(2);
+    if (props.tog === true) {
+      alert("You already picked -> Switch ");
+    }
     if (props.number <= 1) {
       alert("Out of Stones in Pile");
-    } else if (props.number > 1) {
+    } else if (props.number > 1 && !props.tog) {
       props.setPile(props.number - 2);
+      props.swap(true);
       console.log("prop num", props.number);
-      
     }
-    props.setBtn(2);
+
+    console.log("two clicked");
   };
-  // if(num===0){
-  //   // const winner= cur==='Player1'?'Player2':'Player1';
-  //   nowin=true;
-  //      props.setChamp(true);
-  //     // props.win();
-  //   // alert(` ${cur} Wins the Game `)
-  // }
-  //onClick={() => props.call()}
 
   return (
-    <div className="d-inline" onClick={redTwo}>
-      <button onClick={() => props.call()}>2️⃣</button>
+    <div className="d-inline">
+      <button onClick={redTwo}>2️⃣</button>
     </div>
   );
 };
