@@ -10,7 +10,7 @@ const Two = function (props) {
     } else if (props.number > 1 && !props.tog) {
       props.setPile(props.number - 2);
       props.swap(true);
-      console.log("prop num", props.number);
+     
     }
 
     console.log("two clicked");

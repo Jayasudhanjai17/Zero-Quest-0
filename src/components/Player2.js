@@ -1,9 +1,9 @@
 import React from "react";
 
-const Player2 = function () {
+const Player2 = function (props) {
   return (
     <div>
-      <h1>Player 2</h1>
+      <h1>{props.player2}</h1>
     </div>
   );
 };
