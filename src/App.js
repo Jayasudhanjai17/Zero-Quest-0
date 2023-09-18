@@ -8,8 +8,8 @@ import Player2 from "./components/Player2";
 import One from "./components/One";
 import Two from "./components/Two";
 import Three from "./components/Three";
-import PlayerNames from "./components/PlayerNames"
-import GameRules from "./components/GameRules"
+import PlayerNames from "./components/PlayerNames";
+import GameRules from "./components/GameRules";
 //Reset Button Or New Game Button
 
 function App() {
@@ -24,16 +24,14 @@ function App() {
   let [champ, setChamp] = React.useState(false);
   let [btn, setBtn] = React.useState(0);
 
-  let[start, setStart]=useState(false);
-//NOTE --------------------------------------PLayer Names-----------------------------
+  let [start, setStart] = useState(false);
+  //NOTE --------------------------------------PLayer Names-----------------------------
   const handleNamesSubmit = (player1Name, player2Name) => {
     setPlayer1(player1Name);
     setPlayer2(player2Name);
     setStart(true);
   };
   //NOTE ----------------------------start function---------------------------
-  
-
 
   //NOTE -----------------------------Toggele State For the Current Player UI----------------------------
 
@@ -42,8 +40,7 @@ function App() {
     if (pile === 0) {
       setToggle(false);
       setChamp(true);
-    setCurPlayer(curPlayer === player1 ? player2 : player1);
-
+      setCurPlayer(curPlayer === player1 ? player2 : player1);
     }
   }, [pile]);
 
@@ -54,13 +51,15 @@ function App() {
     setAllow1((prev) => (pile >= 0 ? !prev : prev));
     setCurPlayer(curPlayer === player1 ? player2 : player1);
   };
-  let swap = <button type="button" onClick={swapy} class="btn btn-primary ">Large button</button>
-
-  
+  let swap = (
+    <button type="button" onClick={swapy} class="btn btn-primary ">
+      Switch
+    </button>
+  );
 
   // NOTE-----------------------------------  &&pile>3 && pile>2 && pile!=0  ?  Style to dissappear-------------------------------------
 
-   //NOTE -----------------------------Toggele State For the Current Player UI----------------------------
+  //NOTE -----------------------------Toggele State For the Current Player UI----------------------------
   const styles = {
     display: allow1 && pile != 0 && !champ ? "flex" : "none",
   };
@@ -76,153 +75,136 @@ function App() {
   };
   const plyrcon = {
     display: champ ? "none" : "flex",
-    
   };
-  const rule={
-    display : start?"none":"block",
-    backgroundColor:champ?"green":"",
-   
-  }
-  const game={
-    display:start?"block":"none",
-  }
-  const wing={
-    backgroundColor:champ?"green":"",
-  }
+  const rule = {
+    display: start ? "none" : "block",
+    backgroundColor: champ ? "green" : "",
+  };
+  const game = {
+    display: start ? "block" : "none",
+  };
+  const wing = {
+    backgroundColor: champ ? "green" : "",
+  };
   //NOTE ---------------------------Winning State For a Player----------------------------------------------
 
   let introState = <h1>PILE:{pile}💰</h1>;
 
-  let winstate = <h1>GameWon by {curPlayer}</h1>;
+  let winstate = <h1>🦄🏆🥇GameWon by🥳 {curPlayer}🙌💥🫡 </h1>;
 
   //--------------------------------------Switch Button function -------------------------------------
 
   //--------------------------------------------------------------------------------
   return (
-   
-    <div className="App"  >
-          <Header></Header>
-      <div className="App" style={rule } >
-      
+    <div className="App">
+      <Header></Header>
+      <div className="App" style={rule}>
         <GameRules player1Name={player1} player2Name={player2} total={20} />
-      
+
         <PlayerNames onNamesSubmit={handleNamesSubmit} setStart={setStart} />
-      
-
-
       </div>
-
-
-
-
-
-
-
 
       <div>
-     
-      <div className="MainCon" style={game}>
-        {champ ? winstate : introState}
+        <div className="MainCon" style={game}>
+          {champ ? winstate : introState}
 
-        <div className="row">
-          <div style={plyrcon}>
-            <div className="col-6 Player1 " style={stylpr1}>
-              <Player1 player1={player1}></Player1>
+          <div className="row">
+            <div style={plyrcon}>
+              <div className="col-6 Player1 " style={stylpr1}>
+                <Player1 className="container" player1={player1}></Player1>
 
-              <div style={styles}>
-                <div className="p1">
-                  <One
-                    number={pile}
-                    setPile={setPile}
-                    cur={curPlayer}
-                    switch={setCurPlayer}
-                    allow1={allow1}
-                    setChamp={setChamp}
-                    setBtn={setBtn}
-                    swap={setToggle}
-                    tog={toggle}
-                  ></One>
-                  <Two
-                    number={pile}
-                    setPile={setPile}
-                    cur={curPlayer}
-                    switch={setCurPlayer}
-                    allow1={allow1}
-                    setAllow1={setAllow1}
-                    setChamp={setChamp}
-                    setBtn={setBtn}
-                    swap={setToggle}
-                    tog={toggle}
-                  ></Two>
-                  <Three
-                    number={pile}
-                    setPile={setPile}
-                    cur={curPlayer}
-                    switch={setCurPlayer}
-                    allow1={allow1}
-                    setAllow1={setAllow1}
-                    setChamp={setChamp}
-                    setBtn={setBtn}
-                    swap={setToggle}
-                    tog={toggle}
-                  ></Three>
+                <div style={styles}>
+                  <div className="p1">
+                    <One
+                      number={pile}
+                      setPile={setPile}
+                      cur={curPlayer}
+                      switch={setCurPlayer}
+                      allow1={allow1}
+                      setChamp={setChamp}
+                      setBtn={setBtn}
+                      swap={setToggle}
+                      tog={toggle}
+                    ></One>
+                    <Two
+                      number={pile}
+                      setPile={setPile}
+                      cur={curPlayer}
+                      switch={setCurPlayer}
+                      allow1={allow1}
+                      setAllow1={setAllow1}
+                      setChamp={setChamp}
+                      setBtn={setBtn}
+                      swap={setToggle}
+                      tog={toggle}
+                    ></Two>
+                    <Three
+                      number={pile}
+                      setPile={setPile}
+                      cur={curPlayer}
+                      switch={setCurPlayer}
+                      allow1={allow1}
+                      setAllow1={setAllow1}
+                      setChamp={setChamp}
+                      setBtn={setBtn}
+                      swap={setToggle}
+                      tog={toggle}
+                    ></Three>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-6 Player2" style={stylpr2}>
+                <Player2 className="container" player2={player2}></Player2>
+                <div style={styles2}>
+                  <div className="p2">
+                    <One
+                      number={pile}
+                      setPile={setPile}
+                      cur={curPlayer}
+                      switch={setCurPlayer}
+                      allow1={allow1}
+                      setAllow1={setAllow1}
+                      setChamp={setChamp}
+                      setBtn={setBtn}
+                      champ={champ}
+                      swap={setToggle}
+                      tog={toggle}
+                    ></One>
+                    <Two
+                      number={pile}
+                      setPile={setPile}
+                      cur={curPlayer}
+                      switch={setCurPlayer}
+                      allow1={allow1}
+                      setAllow1={setAllow1}
+                      setChamp={setChamp}
+                      champ={champ}
+                      setBtn={setBtn}
+                      swap={setToggle}
+                      tog={toggle}
+                    ></Two>
+                    <Three
+                      number={pile}
+                      setPile={setPile}
+                      cur={curPlayer}
+                      switch={setCurPlayer}
+                      allow1={allow1}
+                      setAllow1={setAllow1}
+                      setChamp={setChamp}
+                      champ={champ}
+                      setBtn={setBtn}
+                      swap={setToggle}
+                      tog={toggle}
+                    ></Three>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div className="col-6 Player2" style={stylpr2}>
-              <Player2 player2={player2}></Player2>
-              <div style={styles2}>
-                <div className="p2">
-                  <One
-                    number={pile}
-                    setPile={setPile}
-                    cur={curPlayer}
-                    switch={setCurPlayer}
-                    allow1={allow1}
-                    setAllow1={setAllow1}
-                    setChamp={setChamp}
-                    setBtn={setBtn}
-                    champ={champ}
-                    swap={setToggle}
-                    tog={toggle}
-                  ></One>
-                  <Two
-                    number={pile}
-                    setPile={setPile}
-                    cur={curPlayer}
-                    switch={setCurPlayer}
-                    allow1={allow1}
-                    setAllow1={setAllow1}
-                    setChamp={setChamp}
-                    champ={champ}
-                    setBtn={setBtn}
-                    swap={setToggle}
-                    tog={toggle}
-                  ></Two>
-                  <Three
-                    number={pile}
-                    setPile={setPile}
-                    cur={curPlayer}
-                    switch={setCurPlayer}
-                    allow1={allow1}
-                    setAllow1={setAllow1}
-                    setChamp={setChamp}
-                    champ={champ}
-                    setBtn={setBtn}
-                    swap={setToggle}
-                    tog={toggle}
-                  ></Three>
-                </div>
-              </div>
-            </div>
+            {toggle ? swap : " "}
           </div>
-          {toggle ? swap : " "}
         </div>
       </div>
-    </div>
-
-
     </div>
   );
 }
