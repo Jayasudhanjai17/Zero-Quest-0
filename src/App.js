@@ -54,7 +54,7 @@ function App() {
     setAllow1((prev) => (pile >= 0 ? !prev : prev));
     setCurPlayer(curPlayer === player1 ? player2 : player1);
   };
-  let swap = <button onClick={swapy}> Switch</button>;
+  let swap = <button type="button" onClick={swapy} class="btn btn-primary ">Large button</button>
 
   
 
@@ -76,12 +76,18 @@ function App() {
   };
   const plyrcon = {
     display: champ ? "none" : "flex",
+    
   };
   const rule={
     display : start?"none":"block",
+    backgroundColor:champ?"green":"",
+   
   }
   const game={
     display:start?"block":"none",
+  }
+  const wing={
+    backgroundColor:champ?"green":"",
   }
   //NOTE ---------------------------Winning State For a Player----------------------------------------------
 
@@ -94,9 +100,9 @@ function App() {
   //--------------------------------------------------------------------------------
   return (
    
-    <div className="App" >
+    <div className="App"  >
           <Header></Header>
-      <div className="App" style={rule}>
+      <div className="App" style={rule } >
       
         <GameRules player1Name={player1} player2Name={player2} total={20} />
       
@@ -215,6 +221,8 @@ function App() {
         </div>
       </div>
     </div>
+
+
     </div>
   );
 }

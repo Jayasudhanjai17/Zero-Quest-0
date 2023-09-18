@@ -3,7 +3,7 @@ import React from "react";
 
 const GameRules = ({ player1Name, player2Name, total }) => {
   return (
-    <div className="game-rules">
+    <div className=" container game-rules">
       <h2>Game Rules</h2>
       <div className="rule">
         <strong>Starting Total:</strong> The game starts with {total}.

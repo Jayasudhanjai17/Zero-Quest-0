@@ -15,8 +15,8 @@ const Three = function (props) {
     props.setBtn(3);
   };
   return (
-    <div className="d-inline">
-      <button onClick={redThree}>3️⃣</button>
+    <div className="d-inline container">
+     <button type="button" onClick={redThree}class="btn btn-outline-success three">3</button>
     </div>
   );
 };

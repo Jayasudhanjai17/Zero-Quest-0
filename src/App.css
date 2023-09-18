@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-  
-  
 }
 
 .App-logo {
@@ -39,31 +37,27 @@
   }
 }
 /* Custom Style */
-.Player1{
-  
-
+.Player1 {
   border: 3px solid black;
 }
-.p1{
-
- margin-left: auto;
- margin-right: auto;
-}
-.p2{
+.p1 {
   margin-left: auto;
- margin-right: auto;
+  margin-right: auto;
+}
+.p2 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.Player2{
+.Player2 {
   border: 3px solid black;
 }
-.MainCon{
+.MainCon {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 100px;
   padding-right: 100px;
-  border:10px solid black;
-
+  border: 10px solid black;
 }
 .current {
   background-color: #c7365f;
@@ -84,4 +78,106 @@
 /* Hidden class*/
 .hidden {
   display: none;
+}
+.game-rules {
+  background-color: #61dafb;
+
+  transform: perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg)
+    scale(0.9, 0.9);
+  border-radius: 20px;
+  border: 5px solid #e6e6e6;
+  box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-in-out transform;
+
+  &:hover {
+    transform: translate3d(0px, 0px, -250px);
+  }
+}
+.playername {
+  border-radius: 10px;
+  border: 5px solid black;
+  text-align: center;
+}
+.plr {
+  color: #c1185c;
+  border: 2px solid black;
+  border-radius: 07px;
+  padding-top: 10px;
+  &:hover {
+    background-color: rgb(227, 228, 114);
+  }
+}
+
+.tart {
+  border-radius: 10px;
+  &:hover {
+    background-color: #a7d361e2;
+  }
+}
+
+/* CSS */
+.button-73 {
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: #adcfff 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-73:hover {
+  background-color: #ffc229;
+  box-shadow: #ff6314 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+  }
+}
+/* buttons */
+.one {
+  color: #adcfff;
+  /* background-color: #090f53; */
+  background-color: #282c34;
+  border: ipx solid red;
+  width: 60px;
+}
+.two {
+  color: #adcfff;
+  border: 1px rgb(139, 27, 19) solid;
+  /* background-color: rgba(26, 74, 0, 0.906); */
+  background-color: #282c34;
+  width: 60px;
+}
+.three {
+  color: #adcfff;
+  /* background-color: #aa4611; */
+  border: ipx solid red;
+  width: 60px;
+  background-color: #282c34;
+  text-align: center;
 }
