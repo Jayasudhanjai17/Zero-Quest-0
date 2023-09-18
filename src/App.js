@@ -157,7 +157,7 @@ function App() {
               <div className="col-6 Player2" style={stylpr2}>
                 <Player2 className="container" player2={player2}></Player2>
                 <div style={styles2}>
-                  <div className="p2">
+                  <div className="p1">
                     <One
                       number={pile}
                       setPile={setPile}

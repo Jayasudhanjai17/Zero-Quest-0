@@ -21,7 +21,7 @@ const One = function (props) {
 
   return (
     <div className="d-inline container">
-    <button type="button"onClick={redOne} class="btn btn-outline-danger one">1</button>
+    <button type="button"onClick={redOne}  class="btn btn-outline-danger one">1</button>
     </div>
   );
 };

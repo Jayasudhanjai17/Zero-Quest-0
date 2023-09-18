@@ -43,10 +43,14 @@
 .p1 {
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.p2 {
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width: 768px) {
+  .p1 {
+    flex-wrap: wrap;
+  }
 }
 
 .Player2 {

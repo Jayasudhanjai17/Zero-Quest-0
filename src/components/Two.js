@@ -18,7 +18,7 @@ const Two = function (props) {
 
   return (
     <div className="d-inline container">
-     <button type="button"onClick={redTwo} class="btn btn-outline-warning two">2</button>
+     <button type="button"onClick={redTwo}  class="btn btn-outline-warning two">2</button>
     </div>
   );
 };

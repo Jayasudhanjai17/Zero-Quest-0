@@ -16,7 +16,7 @@ const Three = function (props) {
   };
   return (
     <div className="d-inline container">
-     <button type="button" onClick={redThree}class="btn btn-outline-success three">3</button>
+     <button type="button" onClick={redThree}  class="btn btn-outline-success three">3</button>
     </div>
   );
 };
